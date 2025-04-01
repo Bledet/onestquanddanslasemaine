@@ -1,0 +1,97 @@
+h1 {
+	font-size: 35px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#simple {
+	font-size: 25px;
+	text-align: center;
+}
+
+#message {
+	font-size: 30px;
+	text-align: center;
+	font-family: monospace;
+}
+
+#avertissement {
+	font-size: 15px;
+	text-align: center;
+	font-family: monospace;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 20px auto;
+	font-size: 1.2rem;
+	overflow: hidden;
+	border-radius: 1em;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-right: 10px;
+}
+
+th,
+td {
+	width: 80px;
+	/* height: 80px; */
+	text-align: center;
+	vertical-align: middle;
+	border-bottom: 3px solid white;
+	border-left: 3px solid white;
+	border-right: 3px solid white;
+	position: relative;
+}
+
+th {
+	background-color: rgb(216, 216, 216);
+}
+
+.debut {
+	height: 100px;
+	background-color: rgb(179, 206, 241);
+}
+
+.fin {
+	height: 100px;
+	background-color: rgb(236, 200, 101);
+}
+
+.milieu {
+	height: 80px;
+	background-color: rgb(238, 245, 175);
+}
+
+.marker {
+	background-color: rgb(159, 255, 151);
+}
+
+.mark-line {
+	width: 80px;
+	height: 2px;
+	background-color: rgb(255, 11, 11);
+	position: absolute;
+}
+
+#debut-debut-week {
+	background-color: rgb(158, 158, 158);}
+#debut-fin-week {
+	background-color: rgb(158, 158, 158);
+}
+
+#milieu-fin-week {
+	background-color: rgb(187, 187, 187);
+}
+#milieu-debut-week {
+	background-color: rgb(187, 187, 187);
+}
+
+#fin-debut-week {
+	background-color: rgb(158, 158, 158);}
+#fin-fin-week {
+	background-color: rgb(158, 158, 158);}
