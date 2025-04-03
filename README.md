@@ -9,10 +9,11 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 ## Fonctionnalités principales :
 - **Suivi en temps réel** : Un curseur évolue en fonction de l'heure, vous indiquant précisément votre position dans la semaine, du début matin à la fin de l'après-midi.
+- **Une phrase clair** : Parce que lundi, mardi et j'en passe ce n'est pas clair du tout, **OnestQuandDansLaSemaine** vous propose une phrase clair et net.
 
 
 ## Nouveaux ajouts :
-
+### Version 1.1
 - **Mise à jour du curseur** : Le curseur est maintenant plus fluide et précis, vous permettant de savoir exactement où vous en êtes dans la journée.
 
 ## À venir :
