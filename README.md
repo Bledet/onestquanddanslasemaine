@@ -13,8 +13,9 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
-### Version 1.1
+### Version 2.0.1
 - **Mise à jour du curseur** : Le curseur est maintenant plus fluide et précis, vous permettant de savoir exactement où vous en êtes dans la journée.
+- **Weekend grisé** : Les cases du weekend on été grisées car non, **on ne travail pas le weekend**.
 
 ## À venir :
 - **Notifications de "La semaine est finie"** : À 18h précises, un message apparaîtra pour vous rappeler que, oui, vous avez survécu à la semaine.
