@@ -40,24 +40,25 @@ function hourConverter(hour, minutes) {
     let percentage;
 
     if (hour < 12) {
-        // Matin : de 8h (-185) à 12h (-85)
+        // Matin : de 8h (0) à 12h (33)
         const totalMinutes = (12 - 8) * 60; // 240 min (8h -> 12h)
         const currentMinutes = (hour - 8) * 60 + minutes;
-        percentage = ((currentMinutes / totalMinutes) * 100) - 185;
+        percentage = (currentMinutes / totalMinutes) * 33;
     } else if (hour < 14) {
-        // 12h (-85) à 14h (0)
+        // 12h (33) à 14h (50)
         const totalMinutes = (14 - 12) * 60; // 120 min (12h -> 14h)
         const currentMinutes = (hour - 12) * 60 + minutes;
-        percentage = ((currentMinutes / totalMinutes) * 85) - 85;
+        percentage = (currentMinutes / totalMinutes) * 17 + 33;
     } else {
-        // Après-midi : de 14h (0) à 18h (100)
+        // Après-midi : de 14h (50) à 18h (100)
         const totalMinutes = (18 - 14) * 60; // 240 min (14h -> 18h)
         const currentMinutes = (hour - 14) * 60 + minutes;
-        percentage = (currentMinutes / totalMinutes) * 100;
+        percentage = (currentMinutes / totalMinutes) * 50 + 50;
     }
 
     return percentage;
 }
+
 
 
 
