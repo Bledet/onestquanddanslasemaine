@@ -34,42 +34,41 @@ if (day === 0) {
 
 function hourConverter(hour, minutes) {
     if (hour < 8 || hour >= 18) {
-        return -300; // En dehors des heures affichées, le curseur est caché
+        return -300; // Hors de la plage horaire -> cache le curseur
     }
 
     let percentage;
 
     if (hour < 12) {
-        // Matin : de 8h (0) à 12h (33)
-        const totalMinutes = (12 - 8) * 60; // 240 min (8h -> 12h)
+        // Matin (8h-12h) → 0% à 100%
+        const totalMinutes = (12 - 8) * 60; // 240 min
         const currentMinutes = (hour - 8) * 60 + minutes;
-        percentage = (currentMinutes / totalMinutes) * 33;
+        percentage = (currentMinutes / totalMinutes) * 100;
     } else if (hour < 14) {
-        // 12h (33) à 14h (50)
-        const totalMinutes = (14 - 12) * 60; // 120 min (12h -> 14h)
+        // Midi (12h-14h) → 0% à 100%
+        const totalMinutes = (14 - 12) * 60; // 120 min
         const currentMinutes = (hour - 12) * 60 + minutes;
-        percentage = (currentMinutes / totalMinutes) * 17 + 33;
+        percentage = (currentMinutes / totalMinutes) * 100;
     } else {
-        // Après-midi : de 14h (50) à 18h (100)
-        const totalMinutes = (18 - 14) * 60; // 240 min (14h -> 18h)
+        // Après-midi (14h-18h) → 0% à 100%
+        const totalMinutes = (18 - 14) * 60; // 240 min
         const currentMinutes = (hour - 14) * 60 + minutes;
-        percentage = (currentMinutes / totalMinutes) * 50 + 50;
+        percentage = (currentMinutes / totalMinutes) * 100;
     }
 
     return percentage;
 }
 
 
-
-
 function updateCalendar() {
-	const now = new Date();
-	const day = now.getDay();
-	const hour = now.getHours();
-	const position = hourConverter(hour, minutes);
-	let cell;
+	
+	console.log("day :", day);
+	console.log("hour :", hour);
+	console.log("minute :", minutes);
 
-	console.log(day);
+	const position = hourConverter(hour, minutes);
+
+	let cell;
 
 	if (hour < 8 || hour > 18) {
 		document.getElementById("avertissement").innerHTML = '(Tu ne devrais pas être là)'
@@ -142,8 +141,7 @@ function updateCalendar() {
 			break;
 	}
 
-
-	console.log(position);
+	console.log("position: ", position);
 	
 	// Ajout de la classe "marker" à la cellule trouvée
 	cell.classList.add('marker');
