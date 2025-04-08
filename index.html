@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html>
-	<meta charset="utf-8">
+<meta charset="utf-8">
+
 <head>
 	<title>On est quand</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-	<h1>On est quand dans la semaine ?</h1>
-	<p id="simple">C'est très simple:</p>
-	<div id="message"></div>
-	<div id="avertissement"></div>
-	<table id="calendar">
-		<thead>
-		  <tr>
-			<th>DD</th>
-			<th>FD</th>
-			<th>M</th>
-			<th>DF</th>
-			<th>FF</th>
-			<th>DW</th>
-			<th>FW</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-			<td class="debut" id="debut-debut-debut"></td>
-			<td class="debut" id="debut-fin-debu"></td>
-			<td class="debut" id="debut-milieu"></td>
-			<td class="debut" id="debut-debut-fin"></td>
-			<td class="debut" id="debut-fin-fin"></td>
-			<td class="debut" id="debut-debut-week"></td>
-			<td class="debut" id="debut-fin-week"></td>
-		  </tr>
-		  <!-- Répéter cette ligne pour chaque heure -->
-		  <tr>
-			<td class="milieu" id="milieu-debut-debut"></td>
-			<td class="milieu" id="milieu-fin-debu"></td>
-			<td class="milieu" id="milieu-milieu"></td>
-			<td class="milieu" id="milieu-debut-fin"></td>
-			<td class="milieu" id="milieu-fin-fin"></td>
-			<td class="milieu" id="milieu-debut-week"></td>
-			<td class="milieu" id="milieu-fin-week"></td>
-		  </tr>
-		  <!-- Répéter cette ligne pour chaque heure -->
-		  <tr>
-			<td class="fin"id="fin-debut-debut"></td>
-			<td class="fin"id="fin-fin-debu"></td>
-			<td class="fin"id="fin-milieu"></td>
-			<td class="fin"id="fin-debut-fin"></td>
-			<td class="fin"id="fin-fin-fin"></td>
-			<td class="fin"id="fin-debut-week"></td>
-			<td class="fin"id="fin-fin-week"></td>
-		  </tr>
-		</tbody>
-	  </table>
-	  
+	<div class="calendar-container">
+		<h1>On est quand dans la semaine ?</h1>
+		<p id="simple">C'est très simple:</p>
+		<div id="message"></div>
+		<div id="avertissement"></div>
+		<table id="calendar">
+			<thead>
+				<tr>
+					<th>DD</th>
+					<th>FD</th>
+					<th>M</th>
+					<th>DF</th>
+					<th>FF</th>
+					<th>DW</th>
+					<th>FW</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="debut" id="debut-debut-debut"></td>
+					<td class="debut" id="debut-fin-debu"></td>
+					<td class="debut" id="debut-milieu"></td>
+					<td class="debut" id="debut-debut-fin"></td>
+					<td class="debut" id="debut-fin-fin"></td>
+					<td class="debut" id="debut-debut-week"></td>
+					<td class="debut" id="debut-fin-week"></td>
+				</tr>
+				<!-- Répéter cette ligne pour chaque heure -->
+				<tr>
+					<td class="milieu" id="milieu-debut-debut"></td>
+					<td class="milieu" id="milieu-fin-debu"></td>
+					<td class="milieu" id="milieu-milieu"></td>
+					<td class="milieu" id="milieu-debut-fin"></td>
+					<td class="milieu" id="milieu-fin-fin"></td>
+					<td class="milieu" id="milieu-debut-week"></td>
+					<td class="milieu" id="milieu-fin-week"></td>
+				</tr>
+				<!-- Répéter cette ligne pour chaque heure -->
+				<tr>
+					<td class="fin" id="fin-debut-debut"></td>
+					<td class="fin" id="fin-fin-debu"></td>
+					<td class="fin" id="fin-milieu"></td>
+					<td class="fin" id="fin-debut-fin"></td>
+					<td class="fin" id="fin-fin-fin"></td>
+					<td class="fin" id="fin-debut-week"></td>
+					<td class="fin" id="fin-fin-week"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="weather" class="weather-container">
+		<h1>Météo</h1>
+		<p id="weather-description"></p>
+	</div>
+
 	<script src="script.js"></script>
 </body>
 <footer>
-    <p>v2.0.1</p>
+	<p>v2.0.1</p>
 </footer>
+
 </html>

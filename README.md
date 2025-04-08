@@ -13,13 +13,15 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
+### Version 2.2.0
+- **Prise en charge de la météo** : Parce qu'il est également crucial de savoir si la grosse boule de feu brillera très fort dans le ciel aujourd'hui, vous trouverez désormais une description météo (météo de Lille par défaut).
+
 ### Version 2.0.1
 - **Mise à jour du curseur** : Le curseur est maintenant plus fluide et précis, vous permettant de savoir exactement où vous en êtes dans la journée.
 - **Weekend grisé** : Les cases du weekend on été grisées car non, **on ne travail pas le weekend**.
 
 ## À venir :
 - **Notifications de "La semaine est finie"** : À 18h précises, un message apparaîtra pour vous rappeler que, oui, vous avez survécu à la semaine.
-- **Prise en charge de la météo** : Parce qu'il est également crucial de savoir si la grosse boule de feu brillera très fort dans le ciel aujourd'hui, vous trouverez aussi une météo précise.
 
 ## Comment utiliser ?
 Rien de plus simple, vous pouvez ouvrir la page et, en quelques secondes, savoir exactement *où vous en êtes* dans la semaine. Pas besoin de faire de calculs compliqués ou de stress inutile. Rendez vous vite sur **[OnEstQuandDansLaSemaine](https://bledet.github.io/onestquanddanslasemaine/)**

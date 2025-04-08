@@ -1,7 +1,8 @@
 h1 {
 	font-size: 35px;
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 10px;
+	font-family: 'Poppins', sans-serif;
 }
 
 #simple {
@@ -19,6 +20,10 @@ h1 {
 	font-size: 15px;
 	text-align: center;
 	font-family: monospace;
+}
+
+body {
+    background-color: #dceeff; /* Remplace #f0f0f0 par la couleur de ton choix */
 }
 
 table {
@@ -95,3 +100,34 @@ th {
 	background-color: rgb(158, 158, 158);}
 #fin-fin-week {
 	background-color: rgb(158, 158, 158);}
+
+.calendar-container {
+	padding: 20px;
+	width: 70%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	margin-bottom: 10px; /* Ajouter une marge en bas */
+}
+
+.weather-container {
+	text-align: center;
+	padding: 20px;
+	width: 70%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+}
+
+.weather-container h2 {
+	font-size: 2rem;
+	color: #333;
+}
+
+.weather-container p {
+	font-size: 1.2rem;
+	color: #555;
+	font-style: italic;
+}
