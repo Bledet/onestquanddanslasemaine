@@ -13,7 +13,7 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
-### Version 2.2.0
+### Version 2.2.0 : *Météorologie*
 - **Prise en charge de la météo** : Parce qu'il est également crucial de savoir si la grosse boule de feu brillera très fort dans le ciel aujourd'hui, vous trouverez désormais une description météo (météo de Lille par défaut).
 
 ### Version 2.0.1
@@ -25,6 +25,7 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 - **Information ventologique** : La force et la direction du vent seront bientôt indiquées.
 - **Mode survie** : Parfois la vie est dur, alors le mode survie sera la pour vous aider à... Survivre !
 - **Météo immersive** : Pour une meilleure compréhension du temps, le mode immersion sera vôtre meilleure option.
+- **Cafémétrie** : Vous indiquera précisément la dose de café nécessaire pour accomplir la journée.
 
 ## Comment utiliser ?
 Rien de plus simple, vous pouvez ouvrir la page et, en quelques secondes, savoir exactement *où vous en êtes* dans la semaine. Pas besoin de faire de calculs compliqués ou de stress inutile. Rendez vous vite sur **[OnEstQuandDansLaSemaine](https://bledet.github.io/onestquanddanslasemaine/)**
