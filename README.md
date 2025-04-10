@@ -22,6 +22,7 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 ## À venir :
 - **Notifications de "La semaine est finie"** : À 18h précises, un message apparaîtra pour vous rappeler que, oui, vous avez survécu à la semaine.
+- **Information ventologique"** : La force et la direction du vent seront bientôt indiquées.
 
 ## Comment utiliser ?
 Rien de plus simple, vous pouvez ouvrir la page et, en quelques secondes, savoir exactement *où vous en êtes* dans la semaine. Pas besoin de faire de calculs compliqués ou de stress inutile. Rendez vous vite sur **[OnEstQuandDansLaSemaine](https://bledet.github.io/onestquanddanslasemaine/)**
