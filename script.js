@@ -183,6 +183,18 @@ function updateCalendar() {
 	cell.innerHTML = '<div class="mark-line" style="top:' + position + '%"></div>'
 }
 
+function getWindDirection(degrees) {
+	const directions = [
+	  'Nord', 'Nord-Nord-Est', 'Nord-Est', 'Est-Nord-Est',
+	  'Est', 'Est-Sud-Est', 'Sud-Est', 'Sud-Sud-Est',
+	  'Sud', 'Sud-Sud-Ouest', 'Sud-Ouest', 'Ouest-Sud-Ouest',
+	  'Ouest', 'Ouest-Nord-Ouest', 'Nord-Ouest', 'Nord-Nord-Ouest'
+	];
+	
+	const index = Math.round(degrees / 22.5) % 16;
+	return directions[index];
+}
+
 async function getWeather() {
     const apiKey = '54d3c3582606489233f6becb813cce57';
     const city = 'Lille';
@@ -196,32 +208,57 @@ async function getWeather() {
 
         const temperature = data.main.temp; // Température en Celsius
         const description = data.weather[0].main.toLowerCase(); // Description de la météo (soleil, nuageux, etc.)
+		const fvent = data.wind.speed;
+		const dvent = data.wind.deg;
+		const dventCard = getWindDirection(dvent);
 
         let absurdDescription = '';
         if (description.includes('sun')) {
-            absurdDescription = `La grosse boule de feu brille très fort et tout le monde danse sous ses rayons. Température : ${temperature}°C.`;
+            absurdDescription = `La grosse boule de feu brille très fort et tout le monde danse sous ses rayons.`;
         } else if (description.includes('clouds')) {
-            absurdDescription = `Amas de petites gouttes d'eau en suspension dans l'air, qui forment des taches grisâtres ou blanches dans le ciel, parfois en masse, parfois dispersées. Température : ${temperature}°C.`;
+            absurdDescription = `Amas de petites gouttes d'eau en suspension dans l'air, qui forment des taches grisâtres ou blanches dans le ciel, parfois en masse, parfois dispersées.`;
         } else if (description.includes('rain')) {
-            absurdDescription = `Chute de gouttes d'eau mouillées qui descendent du ciel, sans demander la permission, pour rendre tout un peu plus mouillé. Température : ${temperature}°C.`;
+            absurdDescription = `Chute de gouttes d'eau mouillées qui descendent du ciel, sans demander la permission, pour rendre tout un peu plus mouillé.`;
         } else if (description.includes('snow')) {
-            absurdDescription = `Cristaux de glace très petits qui tombent du ciel très doucement. Température : ${temperature}°C.`;
+            absurdDescription = `Cristaux de glace très petits qui tombent du ciel très doucement.`;
         } else if (description.includes('clear')) {
-            absurdDescription = `Boule de feu visible, sans amas de petites gouttes d'eau flottantes. Température : ${temperature}°C.`;
+            absurdDescription = `Boule de feu visible, sans amas de petites gouttes d'eau flottantes.`;
         } else if (description.includes('drizzle')) {
-            absurdDescription = `Petites gouttes d'eau qui tombent lentement du ciel, rendant l'air légèrement humide sans que ce soit vraiment de la pluie. Température : ${temperature}°C.`;
+            absurdDescription = `Petites gouttes d'eau qui tombent lentement du ciel, rendant l'air légèrement humide sans que ce soit vraiment de la pluie.`;
         } else if (description.includes('mist/fog')) {
-            absurdDescription = `Petites gouttes d'eau en suspension dans l'air près du sol et même qu'on voit plus rien. Température : ${temperature}°C.`;
+            absurdDescription = `Petites gouttes d'eau en suspension dans l'air près du sol et même qu'on voit plus rien.`;
         } else if (description.includes('Thunderstorm')) {
-            absurdDescription = `Un phénomène où de l'air chaud et humide rencontre de l'air froid, créant des orages accompagnés d'éclairs et de bruits forts venant du ciel. Température : ${temperature}°C.`;
+            absurdDescription = `Un phénomène où de l'air chaud et humide rencontre de l'air froid, créant des orages accompagnés d'éclairs et de bruits forts venant du ciel.`;
         } else {
-            absurdDescription = `La météo semble un peu confuse aujourd'hui. Température : ${temperature}°C.`;
+            absurdDescription = `La météo semble un peu confuse aujourd'hui.`;
         }
 
         document.getElementById('weather-description').innerText = absurdDescription;
+        document.getElementById('temperature').innerText = `${temperature}°C`;
+        document.getElementById('force-vent').innerText = `${fvent} Km/h`;
+        document.getElementById('direction-vent').innerText = dventCard;
+		updateCompass(dvent, fvent);
     } catch (error) {
         console.error('Erreur lors de la récupération de la météo :', error);
     }
+}
+
+function toggleCompass() {
+    const compass = document.getElementById('compass');
+    const button = document.getElementById('toggle-compass-button');
+    if (compass.style.display === 'none') {
+      compass.style.display = 'block';
+	  button.innerText = `J'ai compris`;
+	  document.getElementById("compass").scrollIntoView({ behavior: "smooth" });
+    } else {
+      compass.style.display = 'none';
+	  button.innerText = `J'ai pas compris`;
+    }
+}
+
+function updateCompass(degree, speed) {
+	document.getElementById("wind-arrow").setAttribute("transform", `translate(150,150) rotate(${degree})`);
+	document.getElementById("wind-speed").textContent = `${speed} km/h`;
 }
 
 // setInterval(updateCalendar, 60000);

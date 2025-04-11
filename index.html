@@ -5,6 +5,8 @@
 <head>
 	<title>On est quand</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -16,44 +18,42 @@
 		<table id="calendar">
 			<thead>
 				<tr>
-					<th>DD</th>
-					<th>FD</th>
-					<th>M</th>
-					<th>DF</th>
-					<th>FF</th>
-					<th>DW</th>
-					<th>FW</th>
+					<th class="head-table-calendar">DD</th>
+					<th class="head-table-calendar">FD</th>
+					<th class="head-table-calendar">M</th>
+					<th class="head-table-calendar">DF</th>
+					<th class="head-table-calendar">FF</th>
+					<th class="head-table-calendar">DW</th>
+					<th class="head-table-calendar">FW</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="debut" id="debut-debut-debut"></td>
-					<td class="debut" id="debut-fin-debu"></td>
-					<td class="debut" id="debut-milieu"></td>
-					<td class="debut" id="debut-debut-fin"></td>
-					<td class="debut" id="debut-fin-fin"></td>
-					<td class="debut" id="debut-debut-week"></td>
-					<td class="debut" id="debut-fin-week"></td>
+					<td class="debut body-table-calendar" id="debut-debut-debut"></td>
+					<td class="debut body-table-calendar" id="debut-fin-debu"></td>
+					<td class="debut body-table-calendar" id="debut-milieu"></td>
+					<td class="debut body-table-calendar" id="debut-debut-fin"></td>
+					<td class="debut body-table-calendar" id="debut-fin-fin"></td>
+					<td class="debut body-table-calendar" id="debut-debut-week"></td>
+					<td class="debut body-table-calendar" id="debut-fin-week"></td>
 				</tr>
-				<!-- Répéter cette ligne pour chaque heure -->
 				<tr>
-					<td class="milieu" id="milieu-debut-debut"></td>
-					<td class="milieu" id="milieu-fin-debu"></td>
-					<td class="milieu" id="milieu-milieu"></td>
-					<td class="milieu" id="milieu-debut-fin"></td>
-					<td class="milieu" id="milieu-fin-fin"></td>
-					<td class="milieu" id="milieu-debut-week"></td>
-					<td class="milieu" id="milieu-fin-week"></td>
+					<td class="milieu body-table-calendar" id="milieu-debut-debut"></td>
+					<td class="milieu body-table-calendar" id="milieu-fin-debu"></td>
+					<td class="milieu body-table-calendar" id="milieu-milieu"></td>
+					<td class="milieu body-table-calendar" id="milieu-debut-fin"></td>
+					<td class="milieu body-table-calendar" id="milieu-fin-fin"></td>
+					<td class="milieu body-table-calendar" id="milieu-debut-week"></td>
+					<td class="milieu body-table-calendar" id="milieu-fin-week"></td>
 				</tr>
-				<!-- Répéter cette ligne pour chaque heure -->
 				<tr>
-					<td class="fin" id="fin-debut-debut"></td>
-					<td class="fin" id="fin-fin-debu"></td>
-					<td class="fin" id="fin-milieu"></td>
-					<td class="fin" id="fin-debut-fin"></td>
-					<td class="fin" id="fin-fin-fin"></td>
-					<td class="fin" id="fin-debut-week"></td>
-					<td class="fin" id="fin-fin-week"></td>
+					<td class="fin body-table-calendar" id="fin-debut-debut"></td>
+					<td class="fin body-table-calendar" id="fin-fin-debu"></td>
+					<td class="fin body-table-calendar" id="fin-milieu"></td>
+					<td class="fin body-table-calendar" id="fin-debut-fin"></td>
+					<td class="fin body-table-calendar" id="fin-fin-fin"></td>
+					<td class="fin body-table-calendar" id="fin-debut-week"></td>
+					<td class="fin body-table-calendar" id="fin-fin-week"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -61,12 +61,70 @@
 	<div id="weather" class="weather-container">
 		<h1>Météo</h1>
 		<p id="weather-description"></p>
+		<table id="weather-table">
+			<thead>
+				<tr>
+					<th class="head-table-weather">Température</th>
+					<th class="head-table-weather">Direction du vent</th>
+					<th class="head-table-weather">Vitesse du vent</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="body-table-weather" id="temperature"></td>
+					<td class="body-table-weather" id="direction-vent"></td>
+					<td class="body-table-weather" id="force-vent"></td>
+				</tr>
+			</tbody>
+		</table>
+		<button id="toggle-compass-button" onclick="toggleCompass()">J'ai pas compris</button>
+		<div class="wind-compass" id="compass" style="display: none;">
+			<p>T'as pas compris ? Voici un dessin:</p>
+			<svg viewBox="0 0 300 300" class="compass-svg">
+				<!-- Cercle de base -->
+				<circle id="cercle-cardinal" cx="150" cy="150" r="141" />
+				<circle id="cercle-direction-vent" cx="150" cy="150" r="100" />
+
+				<!-- Curseur direction vent -->
+				<polygon id="wind-arrow" points="0,-100 10,0 -10,0" fill="red" transform="translate(150,150) rotate(45)" />
+
+				<!-- Points cardinaux -->
+				<!-- NE -->
+				<circle cx="150" cy="30" r="18" fill="white" />
+				<text x="150" y="35" text-anchor="middle" font-weight="bold">N</text>
+				<!-- NE -->
+				<circle cx="235" cy="65" r="18" fill="white" />
+				<text x="235" y="70" text-anchor="middle" font-weight="bold">NE</text>
+				<!-- E -->
+				<circle cx="270" cy="150" r="18" fill="white" />
+				<text x="270" y="155" text-anchor="middle" font-weight="bold">E</text>
+				<!-- SE -->
+				<circle cx="235" cy="235" r="18" fill="white" />
+				<text x="235" y="240" text-anchor="middle" font-weight="bold">SE</text>
+				<!-- S -->
+				<circle cx="150" cy="270" r="18" fill="white" />
+				<text x="150" y="275" text-anchor="middle" font-weight="bold">S</text>
+				<!-- SW -->
+				<circle cx="65" cy="235" r="18" fill="white" />
+				<text x="65" y="240" text-anchor="middle" font-weight="bold">SO</text>
+				<!-- W -->
+				<circle cx="30" cy="150" r="18" fill="white" />
+				<text x="30" y="155" text-anchor="middle" font-weight="bold">O</text>
+				<!-- NW -->
+				<circle cx="65" cy="65" r="18" fill="white" />
+				<text x="65" y="70" text-anchor="middle" font-weight="bold">NO</text>
+
+				<!-- Cercle central avec force -->
+				<circle id="cercle-force-vent" cx="150" cy="150" r="40" />
+				<text id="wind-speed" x="150" y="155" text-anchor="middle" font-size="12">0 km/h</text>
+			</svg>
+		</div>
 	</div>
 
 	<script src="script.js"></script>
 </body>
 <footer>
-	<p>v2.2.0</p>
+	<p>v2.3.0</p>
 </footer>
 
 </html>
