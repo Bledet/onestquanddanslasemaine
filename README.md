@@ -13,6 +13,9 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
+### Version 2.3.0
+- **Ventologie** : La science du vent à été ajoutée. Il est désormais possible d'avoir la force et la direction du vent. Et si ce n'est toujours pas clair, vous pourrez toujours vous en plaindre en appuyant sur le bouton prévu à cet effet.
+
 ### Version 2.2.0 : *Météorologie*
 - **Prise en charge de la météo** : Parce qu'il est également crucial de savoir si la grosse boule de feu brillera très fort dans le ciel aujourd'hui, vous trouverez désormais une description météo (météo de Lille par défaut).
 
@@ -22,7 +25,6 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 ## À venir :
 - **Notifications de "La semaine est finie"** : À 18h précises, un message apparaîtra pour vous rappeler que, oui, vous avez survécu à la semaine.
-- **Information ventologique** : La force et la direction du vent seront bientôt indiquées.
 - **Mode survie** : Parfois la vie est dur, alors le mode survie sera la pour vous aider à... Survivre !
 - **Météo immersive** : Pour une meilleure compréhension du temps, le mode immersion sera vôtre meilleure option.
 - **Cafémétrie** : Vous indiquera précisément la dose de café nécessaire pour accomplir la journée.
