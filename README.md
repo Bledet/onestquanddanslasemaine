@@ -13,7 +13,7 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
-### Version 2.3.0
+### Version 2.3.0 : *Ventologie*
 - **Ventologie** : La science du vent à été ajoutée. Il est désormais possible d'avoir la force et la direction du vent. Et si ce n'est toujours pas clair, vous pourrez toujours vous en plaindre en appuyant sur le bouton prévu à cet effet.
 
 ### Version 2.2.0 : *Météorologie*
