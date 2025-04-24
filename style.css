@@ -24,7 +24,7 @@ h1 {
 }
 
 body {
-    background-color: #dceeff; /* Remplace #f0f0f0 par la couleur de ton choix */
+    background-color: #dceeff;
 }
 
 table {
@@ -194,8 +194,35 @@ footer {
 	stroke: rgb(255, 11, 11);
 	stroke-width: 3;
 }
-#girouette {
-	
+
+.local-buttons {
+	background-color: rgb(216, 216, 216);;
+	border: none;
+	padding: 10px 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 30px;
+	font-size: 16px;
+	font-family: cursive;
+	cursor: pointer;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.local-buttons:hover {
+	background-color: rgb(159, 255, 151);
+	transform: scale(1.05);
+}
+
+.local-buttons:active {
+	transform: scale(0.98);
+}
+
+.local-buttons.active {
+	background-color: #1184ff;
+	color: white;
+	font-weight: bold;
+	transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
   
 
@@ -209,13 +236,13 @@ footer {
 	cursor: pointer;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 	transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  #toggle-compass-button:hover {
+}
+
+#toggle-compass-button:hover {
 	background-color: rgb(159, 255, 151);
 	transform: scale(1.05);
-  }
-  
-  #toggle-compass-button:active {
+}
+
+#toggle-compass-button:active {
 	transform: scale(0.98);
-  }
+}

@@ -60,6 +60,11 @@
 	</div>
 	<div id="weather" class="weather-container">
 		<h1>Météo</h1>
+		<div id="local-wheather">
+			<button id="local-button-lille" class="local-buttons active" onclick="setCity('lille')">Lille</button>
+			<button id="local-button-calais" class="local-buttons" onclick="setCity('calais')">Calais</button>
+			<button id="local-button-geoloc" class="local-buttons" onclick="setCity('geoloc')">Géoloc</button>
+		</div>
 		<p id="weather-description"></p>
 		<table id="weather-table">
 			<thead>
@@ -124,7 +129,7 @@
 	<script src="script.js"></script>
 </body>
 <footer>
-	<p>v2.3.1</p>
+	<p>v2.4.0</p>
 </footer>
 
 </html>

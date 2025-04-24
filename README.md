@@ -13,6 +13,9 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
+### Version 2.4.0 : *Sélection météo*
+- **Sélection météo** : Il est désormais possible de choisir la ville pour la météo: Lille (par défaut), Calais, ou encore obtenir la ville par géolocalisation ! (Attention, toute utilisation de VPN pourrait fausser le résultat)
+
 ### Version 2.3.0 : *Ventologie*
 - **Ventologie** : La science du vent à été ajoutée. Il est désormais possible d'avoir la force et la direction du vent. Et si ce n'est toujours pas clair, vous pourrez toujours vous en plaindre en appuyant sur le bouton prévu à cet effet.
 
