@@ -225,8 +225,8 @@ async function getWeather() {
             absurdDescription = `Boule de feu visible, sans amas de petites gouttes d'eau flottantes.`;
         } else if (description.includes('drizzle')) {
             absurdDescription = `Petites gouttes d'eau qui tombent lentement du ciel, rendant l'air légèrement humide sans que ce soit vraiment de la pluie.`;
-        } else if (description.includes('mist/fog')) {
-            absurdDescription = `Petites gouttes d'eau en suspension dans l'air près du sol et même qu'on voit plus rien.`;
+        } else if (description.includes('mist')) {
+            absurdDescription = `Toute petites gouttes d'eau en suspension dans l'air près du sol et même qu'on voit plus rien.`;
         } else if (description.includes('Thunderstorm')) {
             absurdDescription = `Un phénomène où de l'air chaud et humide rencontre de l'air froid, créant des orages accompagnés d'éclairs et de bruits forts venant du ciel.`;
         } else {
