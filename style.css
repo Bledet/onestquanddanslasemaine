@@ -25,6 +25,8 @@ h1 {
 
 body {
     background-color: #dceeff;
+	overflow-x: hidden;
+
 }
 
 table {
@@ -122,6 +124,28 @@ footer {
 	border-radius: 10px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+	.calendar-container {
+		padding: 20px;
+		width: 95%;
+		background-color: rgba(255, 255, 255, 0.8);
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		margin: 0 auto;
+		margin-bottom: 10px; /* Ajouter une marge en bas */
+	}
+	
+	.weather-container {
+		text-align: center;
+		padding: 20px;
+		width: 95%;
+		background-color: rgba(255, 255, 255, 0.8);
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		margin: 0 auto;
+	}
 }
 
 .weather-container h2 {
