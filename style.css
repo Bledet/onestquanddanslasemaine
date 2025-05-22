@@ -24,6 +24,7 @@ h1 {
 }
 
 body {
+	margin: 0;
     background-color: #dceeff;
 	overflow-x: hidden;
 }
@@ -125,10 +126,10 @@ footer {
 	margin: 0 auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 	.calendar-container {
 		padding: 20px;
-		width: 95%;
+		width: 100%;
 		background-color: rgba(255, 255, 255, 0.8);
 		border-radius: 10px;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -139,7 +140,7 @@ footer {
 	.weather-container {
 		text-align: center;
 		padding: 20px;
-		width: 95%;
+		width: 100%;
 		background-color: rgba(255, 255, 255, 0.8);
 		border-radius: 10px;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
