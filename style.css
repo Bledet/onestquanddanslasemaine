@@ -18,7 +18,7 @@ h1 {
 }
 
 #avertissement {
-	font-size: 15px;
+	font-size: 16px;
 	text-align: center;
 	font-family: monospace;
 }
@@ -194,7 +194,7 @@ footer {
 	margin: 40px auto;
 }
 .compass-svg text {
-	font-size: 15px;
+	font-size: 16px;
 	font-family: Ribeye;
 	fill: #333;
 }
@@ -276,7 +276,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 footer a {
@@ -288,3 +288,9 @@ footer a {
 footer a:hover {
 color: #1184ff;
 }
+
+@media (max-width: 600px) {
+	footer {
+	  display: none;
+	}
+  }
