@@ -13,6 +13,9 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
+### Version 2.5.0 : *Précision futuristique*
+- **Météo du futur** : Il est désormais possible de prédire les dix prochaines heures de météo, autrement dit : de voir dans le futur !
+
 ### Version 2.4.0 : *Sélection météo*
 - **Sélection météo** : Il est désormais possible de choisir la ville pour la météo: Lille (par défaut), Calais, ou encore obtenir la ville par géolocalisation ! (Attention, toute utilisation de VPN pourrait fausser le résultat)
 

@@ -83,6 +83,17 @@
 				</tr>
 			</tbody>
 		</table>
+		<table id="hourly-weather-table" style="display:none; margin-top:20px;">
+			<thead>
+				<tr>
+					<th class="head-table-weather">Heure</th>
+					<th class="head-table-weather">Temp (°C)</th>
+					<th class="head-table-weather">Condition</th>
+					<th class="head-table-weather">Vent (km/h)</th>
+				</tr>
+			</thead>
+			<tbody id="hourly-weather-body"></tbody>
+		</table>
 		<button id="toggle-compass-button" onclick="toggleCompass()">J'ai pas compris</button>
 		<div class="wind-compass" id="compass" style="display: none;">
 			<p>T'as pas compris ? Voici un dessin:</p>
@@ -92,7 +103,8 @@
 				<circle id="cercle-direction-vent" cx="150" cy="150" r="100" />
 
 				<!-- Curseur direction vent -->
-				<polygon id="wind-arrow" points="0,-100 10,0 -10,0" fill="red" transform="translate(150,150) rotate(45)" />
+				<polygon id="wind-arrow" points="0,-100 10,0 -10,0" fill="red"
+					transform="translate(150,150) rotate(45)" />
 
 				<!-- Points cardinaux -->
 				<!-- NE -->
@@ -130,10 +142,11 @@
 	<script src="script.js"></script>
 </body>
 <footer>
-	<p>v2.4.2 |
+	<p>v2.5.0 |
 		<a href="https://github.com/Bledet/onestquanddanslasemaine" target="_blank" style="text-decoration: none;">
 			GitHub
 		</a>
 	</p>
 </footer>
+
 </html>

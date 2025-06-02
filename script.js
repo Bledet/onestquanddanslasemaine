@@ -3,18 +3,19 @@ const date = new Date();
 const day = date.getDay();
 const hour = date.getHours();
 const minutes = date.getMinutes();
+const apiKey = '54d3c3582606489233f6becb813cce57';
 
 const cityButtons = document.querySelectorAll(".local-buttons");
 
 cityButtons.forEach(button => {
 	button.addEventListener("click", () => {
-	  // Supprime la classe active de tous les boutons
-	  cityButtons.forEach(btn => btn.classList.remove("active"));
-  
-	  // Ajoute la classe active au bouton cliqué
-	  button.classList.add("active");
+		// Supprime la classe active de tous les boutons
+		cityButtons.forEach(btn => btn.classList.remove("active"));
+
+		// Ajoute la classe active au bouton cliqué
+		button.classList.add("active");
 	});
-  });
+});
 
 // Ajouter le préfixe approprié en fonction de l'heure actuelle
 let prefix = "";
@@ -44,8 +45,8 @@ if (day === 0) {
 }
 
 
-let latitude;
-let longitude;
+let latitude = 50.63;
+let longitude = 3.06;
 
 // navigator.geolocation.getCurrentPosition(function (position) {
 //   latitude = position.coords.latitude;
@@ -84,6 +85,86 @@ async function getCityFromCoordinates(latitude, longitude) {
 		return "Error retrieving city";
 	}
 }
+
+async function getHourlyWeather(latitude, longitude) {
+	const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,wind_speed_10m,weathercode&timezone=auto`;
+
+	try {
+		const response = await fetch(url);
+		const data = await response.json();
+		const hourly = data.hourly;
+		const hourNow = new Date().getHours()+1;
+
+		console.log('hourNow', hourNow);
+
+		console.log('hourly', JSON.stringify(hourly));
+
+		// Prépare le tableau horaire (10 prochaines heures)
+		const tbody = document.getElementById('hourly-weather-body');
+		tbody.innerHTML = ""; // reset
+
+		for (let i = hourNow; i < hourNow+10; i++) {
+			const tr = document.createElement('tr');
+
+			// Heure locale simple (HH:MM)
+			const date = new Date(hourly.time[i]);
+			const hourStr = date.getHours().toString().padStart(2, '0') + ":00";
+
+			tr.innerHTML = `
+		  <td id="heure">${hourStr}</td>
+		  <td id="temperature">${hourly.temperature_2m[i]} °C</td>
+		  <td id="condition">${weatherCodeToText(hourly.weathercode[i])}</td>  <!-- Condition texte -->
+		  <td id="force-vent">${hourly.wind_speed_10m[i]} km/h</td>
+		`;
+			tbody.appendChild(tr);
+		}
+	} catch (e) {
+		console.error("Erreur récupération météo horaire :", e);
+	}
+}
+
+function weatherCodeToText(code) {
+	switch (code) {
+		case 0: return "Clair";
+		case 1:
+		case 2:
+		case 3: return "Nuageux";
+		case 45:
+		case 48: return "Brouillard";
+		case 51:
+		case 53:
+		case 55: return "Bruine";
+		case 56:
+		case 57: return "Bruine verglaçante";
+		case 61:
+		case 63:
+		case 65: return "Pluie";
+		case 66:
+		case 67: return "Pluie verglaçante";
+		case 71:
+		case 73:
+		case 75: return "Neige";
+		case 77: return "Grains de neige";
+		case 80:
+		case 81:
+		case 82: return "Averses de pluie";
+		case 85:
+		case 86: return "Averses de neige";
+		case 95: return "Orage";
+		case 96:
+		case 99: return "Orage avec grêle";
+		default: return "Inconnu";
+	}
+}
+
+document.getElementById('weather-table').addEventListener('click', async () => {
+	const hourlyTable = document.getElementById('hourly-weather-table');
+	if (hourlyTable.style.display === 'none') {
+		hourlyTable.style.display = 'table';
+	} else {
+		hourlyTable.style.display = 'none';
+	}
+});
 
 function hourConverter(hour, minutes) {
 	if (hour < 8 || hour >= 18) {
@@ -210,7 +291,6 @@ function getWindDirection(degrees) {
 async function getWeather(city) {
 	if (!city) city = 'Lille';
 	console.log('city: ', city);
-	const apiKey = '54d3c3582606489233f6becb813cce57';
 	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=fr&appid=${apiKey}`;
 
 	try {
@@ -265,13 +345,19 @@ function setCity(ville) {
 			console.log("Latitude : " + latitude + ", longitude : " + longitude);
 			getCityFromCoordinates(latitude, longitude).then((city) => {
 				getWeather(city);
+				getHourlyWeather(latitude, longitude);
 				document.getElementById('local-button-geoloc').innerText = city;
 			});
-			
+
 
 		});
+	} else if (ville === 'calais'){
+		getWeather(ville);
+		getHourlyWeather(50.9513, 1.8587)
+		document.getElementById('local-button-geoloc').innerText = 'Géoloc';
 	} else {
 		getWeather(ville);
+		getHourlyWeather(latitude, longitude);
 		document.getElementById('local-button-geoloc').innerText = 'Géoloc';
 	}
 }

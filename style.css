@@ -184,9 +184,16 @@ footer {
 	background-color: rgb(236, 200, 101);
 	
 }
+
+#condition,
 #direction-vent {
 	height: 50px;
 	background-color: rgb(238, 245, 175);
+}
+
+#heure {
+	height: 50px;
+	background-color: rgb(231, 231, 231);
 }
 
 .wind-compass {
@@ -247,6 +254,10 @@ footer {
 	color: white;
 	font-weight: bold;
 	transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+#weather-table tr:hover {
+	cursor: pointer;
 }
   
 
