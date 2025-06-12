@@ -301,7 +301,7 @@ async function getWeather(city) {
 
 		const temperature = data.main.temp; // Température en Celsius
 		const description = data.weather[0].main.toLowerCase(); // Description de la météo (soleil, nuageux, etc.)
-		const fvent = data.wind.speed;
+		const fvent = (data.wind.speed*3.6).toFixed(1);
 		const dvent = data.wind.deg;
 		const dventCard = getWindDirection(dvent);
 
