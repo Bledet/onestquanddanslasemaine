@@ -93,7 +93,7 @@ async function getHourlyWeather(latitude, longitude) {
 		const response = await fetch(url);
 		const data = await response.json();
 		const hourly = data.hourly;
-		const hourNow = new Date().getHours()+1;
+		const hourNow = new Date().getHours() + 1;
 
 		console.log('hourNow', hourNow);
 
@@ -103,7 +103,7 @@ async function getHourlyWeather(latitude, longitude) {
 		const tbody = document.getElementById('hourly-weather-body');
 		tbody.innerHTML = ""; // reset
 
-		for (let i = hourNow; i < hourNow+10; i++) {
+		for (let i = hourNow; i < hourNow + 10; i++) {
 			const tr = document.createElement('tr');
 
 			// Heure locale simple (HH:MM)
@@ -301,7 +301,7 @@ async function getWeather(city) {
 
 		const temperature = data.main.temp; // Température en Celsius
 		const description = data.weather[0].main.toLowerCase(); // Description de la météo (soleil, nuageux, etc.)
-		const fvent = (data.wind.speed*3.6).toFixed(1);
+		const fvent = (data.wind.speed * 3.6).toFixed(1);
 		const dvent = data.wind.deg;
 		const dventCard = getWindDirection(dvent);
 
@@ -351,7 +351,7 @@ function setCity(ville) {
 
 
 		});
-	} else if (ville === 'calais'){
+	} else if (ville === 'calais') {
 		getWeather(ville);
 		getHourlyWeather(50.9513, 1.8587)
 		document.getElementById('local-button-geoloc').innerText = 'Géoloc';
@@ -379,6 +379,48 @@ function updateCompass(degree, speed) {
 	document.getElementById("wind-arrow").setAttribute("transform", `translate(150,150) rotate(${degree})`);
 	document.getElementById("wind-speed").textContent = `${speed} km/h`;
 }
+
+const dictons = [
+	"On ne beurre pas les épinards avec une promesse.",
+	"Mieux vaut un pigeon dans la cave qu’un chameau sur le toit.",
+	"Qui mange son ombre finit par roter la lumière.",
+	"Quand le tournevis miaule, les papillons récitent l’alphabet à l’envers.",
+	"Il ne faut pas peigner les nuages avec une cuillère.",
+	"Les horloges fondent plus vite quand elles écoutent du jazz bulgare.",
+	"Ne confonds jamais ton chausson et ton ambition.",
+	"On ne fait pas de sieste avec un tambour dans le slip.",
+	"À trop flatter la mouette, elle te pique ton sandwich.",
+	"Si le vent souffle trop fort, attache ta soupe.",
+	"Le parapluie du doute n’arrête pas la pluie de saucisson.",
+	"Un parapluie en colère peut facilement renverser un empire de confiture.",
+	"Le cactus n’a pas besoin de wifi pour organiser un concert de flûte.",
+	"Un citron motivé sera toujours plus ou moins jaune.",
+	"Celui qui cherche midi à minuit finit par dîner froid.",
+	"La mouette qui rase l’autoroute n’a pas peur des dragons.",
+	"On ne tricote pas l’avenir avec des spaghettis froids.",
+	"Il faut savoir écouter le silence qui ne fait pas de bruit.",
+	"Quand l'ours fait la vaisselle, et bah c'est bien.",
+	"Une botte de foin n’est jamais en retard pour le bal.",
+	"Ne laisse jamais un poulpe gérer ton agenda.",
+	"Si la rivière chante, c’est que les poissons s’ennuient.",
+	"On ne grimpe pas à la montagne avec un escabeau gonflable.",
+	"Il ne faut pas jongler avec des avocats quand le vent sent le caramel.",
+	"Un escargot ambitieux vaut mieux qu’un trombone déguisé.",
+	"Mieux vaut un parapluie en feu qu’une boussole perdue.",
+	"Être fort c'est comme être nul mais en fait non.",
+	"On apprivoise pas l'ours avec le dos de la tempête",
+	"On ne confie pas ses rêves à une passoire distraite.",
+	"Les crayons cassés ne marche plus.",
+	"Qui vole une banane est un voleur."
+];
+
+function getDailyDicton() {
+	const today = new Date();
+	const day = today.getDate(); // 1 à 31
+	return dictons[(day - 1) % dictons.length];
+  }
+
+document.getElementById("dicton").innerText = "\""+getDailyDicton()+"\"";
 
 // setInterval(updateCalendar, 60000);
 updateCalendar();

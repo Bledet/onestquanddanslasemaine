@@ -13,6 +13,9 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
+### Version 2.6.0 : *Conseil pratique*
+- **Dicton du jour** : Parfois une simple phrase peut tout changer. Alors recevez chaque jour une phrase avisée qui vous fera profondément réfléchir.
+
 ### Version 2.5.0 : *Précision futuristique*
 - **Météo du futur** : Il est désormais possible de prédire les dix prochaines heures de météo, autrement dit : de voir dans le futur !
 

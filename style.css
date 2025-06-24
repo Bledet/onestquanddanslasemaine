@@ -5,6 +5,7 @@ h1 {
 	font-family: 'Poppins', sans-serif;
 }
 
+#dicton,
 #simple {
 	font-size: 25px;
 	text-align: center;
@@ -106,7 +107,8 @@ footer {
 #fin-fin-week {
 	background-color: rgb(158, 158, 158);}
 
-.calendar-container {
+.calendar-container,
+.dicton-container{
 	padding: 20px;
 	width: 70%;
 	background-color: rgba(255, 255, 255, 0.8);
