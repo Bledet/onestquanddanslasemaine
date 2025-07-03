@@ -160,6 +160,7 @@ footer {
 		margin-bottom: 10px; /* Ajouter une marge en bas */
 	}
 	
+	.dicton-container,
 	.weather-container {
 		text-align: center;
 		padding: 20px;
@@ -351,17 +352,45 @@ footer a:hover {
 .snake-info {
 	width: 40%;
 	padding: 10px;
+	margin: 60px;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #000000;
+	background-color: rgb(238, 245, 175);
+	font-family: cursive;
 }
 
 #score-snake {
 	margin-top: 50px;
 	font-size: 20px;
-	font-family: cursive;
+}
+
+.arrow {
+	margin: 0 4px;
+  }
+  
+.snake-square, .food-square {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin: 0 4px;
+}
+
+.snake-square {
+	background-color: #00ffcc; /* même vert que ton serpent */
+}
+
+.food-square {
+	background-color: #ff4444; /* même rouge que la nourriture */
 }
 
 
 @media (max-width: 600px) {
 	footer {
 	  display: none;
+	}
+	.games-container {
+		display: none;
 	}
   }
