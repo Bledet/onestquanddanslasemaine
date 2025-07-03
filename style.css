@@ -150,6 +150,7 @@ footer {
 
 
 @media (max-width: 600px) {
+	.dicton-container,
 	.calendar-container {
 		padding: 20px;
 		width: 100%;
@@ -159,8 +160,6 @@ footer {
 		margin: 0 auto;
 		margin-bottom: 10px; /* Ajouter une marge en bas */
 	}
-	
-	.dicton-container,
 	.weather-container {
 		text-align: center;
 		padding: 20px;
