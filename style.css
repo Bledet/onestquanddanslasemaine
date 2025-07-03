@@ -126,7 +126,28 @@ footer {
 	border-radius: 10px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
+	margin-bottom: 10px; /* Ajouter une marge en bas */
 }
+
+.games-container {
+	padding: 20px;
+	width: 70%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	margin-bottom: 10px; /* Ajouter une marge en bas */
+}
+
+#snake {
+	background: #222;
+	display: block;
+	margin: 40px auto;
+	border: 6px solid #00ffcc;
+	border-radius: 20px;
+	box-shadow: 0 0 20px #00ffcc;
+}
+
 
 @media (max-width: 600px) {
 	.calendar-container {
@@ -262,7 +283,7 @@ footer {
 	cursor: pointer;
 }
   
-
+#toggle-snake-button,
 #toggle-compass-button {
 	background-color: rgb(216, 216, 216);;
 	border: none;
@@ -275,11 +296,13 @@ footer {
 	transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+#toggle-snake-button:hover,
 #toggle-compass-button:hover {
 	background-color: rgb(159, 255, 151);
 	transform: scale(1.05);
 }
 
+#toggle-snake-button:active,
 #toggle-compass-button:active {
 	transform: scale(0.98);
 }
@@ -299,8 +322,43 @@ footer a {
   }
   
 footer a:hover {
-color: #1184ff;
+	color: #1184ff;
 }
+
+.snake-layout {
+	width: 60%;
+	background-color: #444; /* juste pour visualiser */
+	padding: 10px;
+	color: white;
+}
+.info-snake {
+	width: 40%;
+	background-color: #888; /* juste pour visualiser */
+	padding: 10px;
+	color: white;
+}
+
+.snake-container {
+	display: flex;
+	width: 100%;
+  }
+  
+.snake-screen {
+	width: 60%;
+	padding: 10px;
+}
+  
+.snake-info {
+	width: 40%;
+	padding: 10px;
+}
+
+#score-snake {
+	margin-top: 50px;
+	font-size: 20px;
+	font-family: cursive;
+}
+
 
 @media (max-width: 600px) {
 	footer {

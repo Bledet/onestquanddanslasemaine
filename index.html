@@ -71,7 +71,7 @@
 			<button id="local-button-geoloc" class="local-buttons" onclick="setCity('geoloc')">Géoloc</button>
 		</div>
 		<p id="weather-description"></p>
-		<table id="weather-table">
+		<table id="weather-table" title="Clique Pour voir le dans le futur!">
 			<thead>
 				<tr>
 					<th class="head-table-weather">Température</th>
@@ -142,11 +142,108 @@
 			</svg>
 		</div>
 	</div>
+	<div id="games" class="games-container">
+		<h1>Un petit jeu ?</h1>
+		<div style="text-align: center;">
+			<button id="toggle-snake-button" onclick="toggleSnake()">Snake</button>
+		</div>
+		
+		<div id="snake-game" style="display: none;">
+			<div class="snake-container">
+				<div class="snake-screen">
+					<canvas id="snake" width="400" height="400"></canvas>
+				</div>
+				<div class="snake-info">
+					<p id="score-snake">Score: 0</p>
+				</div>
+			</div>
+			<script>
+				const canvas = document.getElementById("snake");
+				const ctx = canvas.getContext("2d");
+
+				const gridSize = 20;
+				const tileCount = canvas.width / gridSize;
+
+				let snake = [{ x: 10, y: 10 }];
+				let velocity = { x: 0, y: 0 };
+				let food = { x: 15, y: 15 };
+				let tail = 5;
+				let score = 0;
+				let isGameOver = false;
+				const scoreDisplay = document.getElementById("score-snake");
+
+
+				function gameLoop() {
+					requestAnimationFrame(gameLoop);
+					if (++count < 6) return; // slow the loop
+					count = 0;
+
+					// move snake
+					const head = { x: snake[0].x + velocity.x, y: snake[0].y + velocity.y };
+					snake.unshift(head);
+
+					// check collision with food
+					if (head.x === food.x && head.y === food.y) {
+						tail++;
+						food = {
+							x: Math.floor(Math.random() * tileCount),
+							y: Math.floor(Math.random() * tileCount)
+						};
+						score++;
+						scoreDisplay.textContent = "Score: " + score;
+					}
+
+					// trim snake
+					while (snake.length > tail) snake.pop();
+
+					// check wall or self collision
+					if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || snake.slice(1).some(s => s.x === head.x && s.y === head.y)) {
+						snake = [{ x: 10, y: 10 }];
+						velocity = { x: 0, y: 0 };
+						tail = 5;
+						isGameOver = true;
+					}
+
+					// draw board
+					ctx.fillStyle = "#222";
+					ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+					// draw food
+					ctx.fillStyle = "#ff4444";
+					ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
+
+					// draw snake
+					ctx.fillStyle = "#00ffcc";
+					for (const s of snake) {
+						ctx.fillRect(s.x * gridSize, s.y * gridSize, gridSize - 2, gridSize - 2);
+					}
+				}
+
+				let count = 0;
+				requestAnimationFrame(gameLoop);
+
+				document.addEventListener("keydown", (e) => {
+					if (isGameOver) {
+						score = 0;
+						scoreDisplay.textContent = "Score: " + score;
+						isGameOver = false;
+					}
+					switch (e.key) {
+						case "ArrowLeft": if (velocity.x !== 1) velocity = { x: -1, y: 0 }; break;
+						case "ArrowUp": if (velocity.y !== 1) velocity = { x: 0, y: -1 }; break;
+						case "ArrowRight": if (velocity.x !== -1) velocity = { x: 1, y: 0 }; break;
+						case "ArrowDown": if (velocity.y !== -1) velocity = { x: 0, y: 1 }; break;
+					}
+				});
+			</script>
+		</div>
+
+	</div>
 
 	<script src="script.js"></script>
 </body>
 <footer>
-	<p>v2.6.0 |
+	<p>v2.7.0 |
 		<a href="https://github.com/Bledet/onestquanddanslasemaine" target="_blank" style="text-decoration: none;">
 			GitHub
 		</a>

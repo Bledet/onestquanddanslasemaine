@@ -7,6 +7,13 @@ const apiKey = '54d3c3582606489233f6becb813cce57';
 
 const cityButtons = document.querySelectorAll(".local-buttons");
 
+window.addEventListener("keydown", function(e) {
+	const keysToDisable = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+	if (keysToDisable.includes(e.key)) {
+		e.preventDefault();
+	}
+}, false);
+
 cityButtons.forEach(button => {
 	button.addEventListener("click", () => {
 		// Supprime la classe active de tous les boutons
@@ -372,6 +379,15 @@ function toggleCompass() {
 	} else {
 		compass.style.display = 'none';
 		button.innerText = `J'ai pas compris`;
+	}
+}
+function toggleSnake() {
+	const snake = document.getElementById('snake-game');
+	if (snake.style.display === 'none') {
+		snake.style.display = 'block';
+		document.getElementById("snake").scrollIntoView({ behavior: "smooth" });
+	} else {
+		snake.style.display = 'none';
 	}
 }
 

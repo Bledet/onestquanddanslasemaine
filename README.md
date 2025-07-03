@@ -13,6 +13,9 @@ Parce qu'il est essentiel de savoir si vous êtes dans le *"début de la fin de 
 
 
 ## Nouveaux ajouts :
+### Version 2.7.0 : *Section jeu*
+- **Catégorie jeux** : Besoin d'une pause divertissante sans devoir parler à tes collègues ? Tu peux maintenant profitez de la nouvelle catégorie. Elle sera agrémentée avec de nouveau jeux plus tard. Le premier jeu est un grand classique: Snake.
+
 ### Version 2.6.0 : *Conseil pratique*
 - **Dicton du jour** : Parfois une simple phrase peut tout changer. Alors recevez chaque jour une phrase avisée qui vous fera profondément réfléchir.
 
